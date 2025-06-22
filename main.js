@@ -23,5 +23,30 @@ function getComputerChoice()
     {
         return "scissors";
     }
+}
+
+ // Humans Choice
+function getHumanChoice()
+{
+     // prompt for input
+    // Future fix: Invalid input 
+    const humanChoice = prompt("Enter a choice (rock, paper, scissors:");
+
+    if (humanChoice == "rock")
+    {
+        return "rock";
+    }
+    else if (humanChoice == "paper")
+    {
+        return "paper";
+    }
+    else
+    {
+        return "scissors";
+    }
 
 }
+
+// Call the function 
+// (testing prompt)
+console.log(getHumanChoice());
