@@ -6,7 +6,7 @@ function getHumanChoice()
 {
      // prompt for input
     // Future fix: Invalid input 
-    const humanChoice = prompt("Enter a choice (rock, paper, scissors:").toLowerCase();
+    const humanChoice = prompt("Enter a choice (rock, paper, scissors):").toLowerCase();
 
     if (humanChoice == "rock")
     {
@@ -99,11 +99,28 @@ function playRound(humanChoice, computerChoice)
 function playGame()
 // For every game
 {
+
+    //playRound(humanChoice)
     for (let i = 0; i < 5; i++)
     {
         const humanChoice = getHumanChoice();
         const computerChoice = getComputerChoice();
         playRound(humanChoice, computerChoice);
+    }
+
+    console.log(`Your score: ${humanScore} and the Computers: ${computerScore}`)
+
+    if (humanScore > computerScore)
+    {
+        console.log("Human wins!")
+    }
+    else if (humanScore < computerScore)
+    {
+        console.log("Computer wins!")
+    }
+    else
+    {
+        console.log("Its a draw. Tie.")
     }
 }
 
