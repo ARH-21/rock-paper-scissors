@@ -1,11 +1,7 @@
-console.log("Testing...")
-
-
- // Humans Choice
+ // Human Choice
 function getHumanChoice()
 {
-     // prompt for input
-    // Future fix: Invalid input 
+     // Prompt user input
     const humanChoice = prompt("Enter a choice (rock, paper, scissors):").toLowerCase();
 
     if (humanChoice == "rock")
@@ -23,10 +19,7 @@ function getHumanChoice()
 
 }
 
-// Call the function 
-// (testing prompt)
-console.log(getHumanChoice());
-
+// Computer Choice
 function getComputerChoice()
 {
     // Return one following string values (rock, paper, scissors)
@@ -52,23 +45,16 @@ function getComputerChoice()
     }
 }
 
-// Keep track of score (global scope)
+// Keep track of score 
+
+// Global Variables
 let humanScore = 0;
 let computerScore = 0;
 
+// Game logic
 function playRound(humanChoice, computerChoice)
 {
-    // We could lowercase the input in the other function
-    // Instead over here we'll just do it.
-    // (either method works)
-    //humanChoice = humanChoice.toLowercase();
-
-    // how many ways can we win?
-
-
-    // I suppose you want to split
-    // Player Wins
-
+    // Player wins
     if 
     ((humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
@@ -77,6 +63,7 @@ function playRound(humanChoice, computerChoice)
         console.log("You win! " + humanChoice + " beats " + computerChoice);
         humanScore += 1;
     }
+    // Player loses
     else if 
     ((humanChoice === "rock" && computerChoice === "paper") ||
     (humanChoice === "paper" && computerChoice === "scissors") ||
@@ -85,22 +72,18 @@ function playRound(humanChoice, computerChoice)
         console.log("You lose! " + computerChoice + " beats " + humanChoice);
         computerScore += 1;
     }
+    // Draw
     else
     {
-        console.log("draw.")
+        console.log("You both picked the same option, so it's a tie.")
     }
 
-    // Player Loses
-
-
-    // Draw
 }
 
+// To play the game
 function playGame()
-// For every game
 {
-
-    //playRound(humanChoice)
+    // 5 Rounds
     for (let i = 0; i < 5; i++)
     {
         const humanChoice = getHumanChoice();
@@ -112,15 +95,15 @@ function playGame()
 
     if (humanScore > computerScore)
     {
-        console.log("Human wins!")
+        console.log("You win the game!")
     }
     else if (humanScore < computerScore)
     {
-        console.log("Computer wins!")
+        console.log("Game over! The computer wins!")
     }
     else
     {
-        console.log("Its a draw. Tie.")
+        console.log("The game has concluded in a tie.")
     }
 }
 
